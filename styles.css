@@ -86,7 +86,7 @@ body:not([data-view="home"]) .homeShowcase {
 }
 
 .logo small, .eyebrow {
-  font-family: var(--font-body);
+  font-family: var(--font-main);
   color: var(--gold);
   letter-spacing: 0;
   font-size: 15px;
@@ -898,6 +898,12 @@ textarea {
   padding: 40px 7vw 56px;
   border-top: 1px solid var(--line);
   color: var(--muted);
+}
+
+.footer p {
+  font-family: var(--font-main);
+  font-size: 20px;
+  line-height: 1.55;
 }
 
 .exportBox {
