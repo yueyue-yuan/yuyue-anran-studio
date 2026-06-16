@@ -11,7 +11,8 @@
   --violet: #6d567f;
   --blue: #223c5d;
   --line: rgba(255, 214, 224, .22);
-  --font-main: "STXingkai", "华文行楷", "KaiTi", "STKaiti", "Microsoft YaHei UI", serif;
+  --font-main: "STXingkai", "华文行楷", "KaiTi", "STKaiti", serif;
+  --font-body: "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -24,7 +25,7 @@ body {
     radial-gradient(circle at 78% 28%, rgba(34, 60, 93, .34), transparent 38%),
     linear-gradient(180deg, #080b16, #130e19 58%, #090b14);
   color: var(--ink);
-  font-family: var(--font-main);
+  font-family: var(--font-body);
 }
 
 #stars {
@@ -85,6 +86,7 @@ body:not([data-view="home"]) .homeShowcase {
 }
 
 .logo small, .eyebrow {
+  font-family: var(--font-body);
   color: var(--gold);
   letter-spacing: 0;
   font-size: 15px;
@@ -93,14 +95,15 @@ body:not([data-view="home"]) .homeShowcase {
 nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 26px;
 }
 
 nav a {
   position: relative;
   color: var(--ink);
   text-decoration: none;
-  font-size: 20px;
+  font-family: var(--font-main);
+  font-size: 19px;
   opacity: .88;
 }
 
@@ -114,9 +117,9 @@ nav a.active::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -17px;
-  width: 30px;
-  height: 2px;
+  bottom: -15px;
+  width: 22px;
+  height: 1px;
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   transform: translateX(-50%);
@@ -234,14 +237,18 @@ h2 {
   font-weight: 500;
 }
 
-h3 { font-size: 22px; }
+h3 {
+  font-family: var(--font-main);
+  font-size: 22px;
+  font-weight: 500;
+}
 
 .heroCopy {
   margin-top: 28px;
   max-width: 520px;
   color: rgba(255, 226, 236, .76);
-  font-family: var(--font-main);
-  font-size: clamp(18px, 1.35vw, 24px);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(16px, 1.1vw, 20px);
   line-height: 1.72;
   text-shadow:
     0 0 10px rgba(255, 214, 224, .14),
@@ -252,7 +259,8 @@ h3 { font-size: 22px; }
   max-width: 620px;
   margin-top: 18px;
   color: rgba(255, 247, 246, .72);
-  font-size: clamp(18px, 1.3vw, 23px);
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1vw, 18px);
   line-height: 1.75;
   text-shadow: 0 6px 18px rgba(0,0,0,.42);
 }
@@ -280,7 +288,8 @@ button, .heroActions a, .uploadButton, .exportBox label {
   color: var(--ink);
   background: rgba(20, 18, 31, .66);
   cursor: pointer;
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: 15px;
   text-decoration: none;
 }
 
@@ -288,7 +297,9 @@ button, .heroActions a, .uploadButton, .exportBox label {
 .heroActions a {
   min-width: 170px;
   text-align: center;
-  font-size: 22px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
 }
 
 button:hover, .heroActions a:hover, .uploadButton:hover, .exportBox label:hover {
@@ -324,7 +335,7 @@ input[type="file"] { display: none; }
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(12,17,32,.2), rgba(12,17,32,.68)),
+    linear-gradient(180deg, rgba(8,11,22,.58), rgba(8,11,22,.9)),
     var(--entry-bg, linear-gradient(135deg, rgba(184,47,95,.28), rgba(34,60,93,.34)));
   backdrop-filter: blur(8px);
   overflow: hidden;
@@ -336,17 +347,26 @@ input[type="file"] { display: none; }
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255, 214, 224, .12);
+  background: rgba(255, 214, 224, .09);
   color: var(--blush);
   font-size: 25px;
 }
 
-.entry strong { font-size: 26px; }
-.entry span { color: var(--muted); font-size: 17px; }
+.entry strong {
+  font-family: var(--font-main);
+  font-size: 25px;
+  text-shadow: 0 5px 18px rgba(0,0,0,.7);
+}
+.entry span {
+  color: rgba(255, 226, 236, .68);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
 .entry em {
   margin-top: 5px;
-  color: rgba(255, 247, 246, .7);
-  font-size: 15px;
+  color: rgba(255, 247, 246, .54);
+  font-family: var(--font-body);
+  font-size: 13px;
   font-style: normal;
   line-height: 1.5;
 }
@@ -366,7 +386,7 @@ input[type="file"] { display: none; }
 }
 
 .homePanel {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 214, 224, .16);
   border-radius: 8px;
   background: linear-gradient(145deg, rgba(15, 22, 40, .28), rgba(9, 12, 24, .34));
   box-shadow: 0 18px 52px rgba(0,0,0,.18);
@@ -389,7 +409,8 @@ input[type="file"] { display: none; }
 .homePanelHead a {
   color: var(--blush);
   text-decoration: none;
-  font-size: 18px;
+  font-family: var(--font-body);
+  font-size: 15px;
 }
 
 .coverStrip {
@@ -452,13 +473,15 @@ input[type="file"] { display: none; }
 }
 
 .timeline strong {
+  font-family: var(--font-main);
   font-size: 22px;
   color: var(--ink);
 }
 
 .timeline span {
   color: var(--muted);
-  font-size: 17px;
+  font-family: var(--font-body);
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -498,24 +521,35 @@ input[type="file"] { display: none; }
 
 .studioGrid {
   display: grid;
-  grid-template-columns: 320px minmax(420px, 1fr);
+  grid-template-columns: 280px minmax(420px, 1fr);
   gap: 22px;
 }
 
 .panel {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 214, 224, .15);
   border-radius: 8px;
-  background: linear-gradient(145deg, var(--panel), rgba(7, 10, 22, .68));
-  box-shadow: 0 20px 60px rgba(0,0,0,.22);
-  backdrop-filter: blur(18px);
+  background: linear-gradient(145deg, rgba(18, 17, 30, .46), rgba(7, 10, 22, .5));
+  box-shadow: 0 18px 48px rgba(0,0,0,.16);
+  backdrop-filter: blur(14px);
 }
 
 .uploadPanel, .playerPanel, .notePanel, .aboutPanel {
   padding: 24px;
 }
 
+.uploadPanel {
+  background: linear-gradient(145deg, rgba(18, 17, 30, .34), rgba(7, 10, 22, .38));
+  border-color: rgba(255, 214, 224, .1);
+}
+
+.playerPanel {
+  background: linear-gradient(145deg, rgba(18, 17, 30, .58), rgba(7, 10, 22, .62));
+}
+
 .uploadPanel p, .trackInfo p, .featureCards p, .storyGrid p, .aboutPanel p {
   color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -523,7 +557,8 @@ input[type="file"] { display: none; }
   max-width: 840px;
   margin: -10px 0 22px;
   color: var(--muted);
-  font-size: 20px;
+  font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.85;
 }
 
@@ -549,7 +584,8 @@ input[type="file"] { display: none; }
 .quickStats b {
   display: block;
   color: var(--gold);
-  font-size: 28px;
+  font-family: var(--font-main);
+  font-size: 26px;
 }
 
 .quickStats span { color: var(--muted); }
@@ -591,6 +627,10 @@ input[type="file"] { display: none; }
   font-size: clamp(28px, 3vw, 42px);
 }
 
+.trackInfo p:first-child {
+  font-family: var(--font-main);
+}
+
 audio {
   width: 100%;
   margin: 20px 0;
@@ -612,7 +652,8 @@ input, textarea {
   color: var(--ink);
   outline: none;
   padding: 12px;
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: 14px;
 }
 
 textarea {
@@ -657,7 +698,8 @@ textarea {
 }
 
 .song strong { font-size: 18px; }
-.song small { color: var(--muted); }
+.song strong { font-family: var(--font-body); }
+.song small { color: var(--muted); font-family: var(--font-body); }
 
 .featureCards, .storyGrid {
   display: grid;
@@ -668,14 +710,15 @@ textarea {
 .featureCards article, .storyGrid article {
   min-height: 170px;
   padding: 24px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 214, 224, .15);
   border-radius: 8px;
-  background: var(--panel);
+  background: rgba(18, 17, 30, .48);
 }
 
 .featureCards strong, .storyGrid strong {
   display: block;
   margin-bottom: 12px;
+  font-family: var(--font-main);
   font-size: 22px;
 }
 
@@ -709,6 +752,7 @@ textarea {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255,255,255,.05);
+  font-family: var(--font-body);
   line-height: 1.75;
 }
 
@@ -768,6 +812,7 @@ textarea {
 
 .roomHero p:last-child {
   color: var(--muted);
+  font-family: var(--font-body);
   line-height: 1.8;
   max-width: 680px;
 }
@@ -804,6 +849,7 @@ textarea {
   padding: 6px 11px;
   color: rgba(255, 226, 236, .82);
   background: rgba(255, 214, 224, .06);
+  font-family: var(--font-body);
   font-size: 16px;
 }
 
@@ -840,6 +886,7 @@ textarea {
 #galleryGrid figcaption {
   padding: 10px;
   color: var(--muted);
+  font-family: var(--font-body);
   font-size: 13px;
 }
 
