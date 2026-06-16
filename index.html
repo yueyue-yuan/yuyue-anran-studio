@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>予月安然工作室</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <a class="logo" href="#home" data-view="home" aria-label="返回首页">
+      <span>Yu Yue Anran</span>
+      <small>予月安然工作室</small>
+    </a>
+    <nav>
+      <a href="#home" data-view="home">首页</a>
+      <a href="#music" data-view="music">音乐馆</a>
+      <a href="#video" data-view="video">影像厅</a>
+      <a href="#inspiration" data-view="inspiration">灵感档案</a>
+      <a href="#stories" data-view="stories">故事墙</a>
+      <a href="#photos" data-view="photos">照片集</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero view active" id="home">
+      <div class="heroImage">
+        <img src="assets/hero-main.png?v=2" alt="予月安然月海音乐背景">
+      </div>
+      <div class="heroScrim"></div>
+      <div class="heroContent">
+        <p class="vertical">SPECIAL</p>
+        <p class="eyebrow">Music · Story · Inspiration</p>
+        <h1>我把那些说不清的东西，<br>写成<span>歌</span>，画成<span>光</span>，留在这里。</h1>
+        <p class="heroCopy">I write the things I can't explain into songs,<br>paint them into light, and leave them here.</p>
+        <p class="heroIntro">这里收录我的音乐、影像、照片、灵感，也收藏一些关于爱、记忆和陪伴的故事。</p>
+        <div class="waveLine" aria-hidden="true"></div>
+        <div class="heroActions">
+          <button id="heroPlay">播放最新作品</button>
+          <a href="#music" data-view="music">进入音乐世界</a>
+          <a href="#stories" data-view="stories">走进故事墙</a>
+        </div>
+      </div>
+      <div class="entryCards" aria-label="站点入口">
+        <a class="entry musicEntry" href="#music" data-view="music"><b>♪</b><strong>音乐馆</strong><span>听见那些无法直接说出口的话</span><em>聆听原创音乐与创作故事。</em></a>
+        <a class="entry videoEntry" href="#video" data-view="video"><b>▣</b><strong>影像厅</strong><span>把音乐里看不见的部分，变成画面</span><em>观看MV、短片与视觉作品。</em></a>
+        <a class="entry inspirationEntry" href="#inspiration" data-view="inspiration"><b>✦</b><strong>灵感档案</strong><span>记录那些一闪而过的念头</span><em>收藏尚未完成的世界。</em></a>
+        <a class="entry storyEntry" href="#stories" data-view="stories"><b>♡</b><strong>故事墙</strong><span>一些故事，一些时间</span><em>记录予安与月月的时间线。</em></a>
+        <a class="entry photoEntry" href="#photos" data-view="photos"><b>☾</b><strong>照片集</strong><span>光落下来的时候，我刚好在场</span><em>保存生活里的光。</em></a>
+      </div>
+      <div class="homeShowcase">
+        <section class="homePanel musicPreview">
+          <div class="homePanelHead">
+            <div>
+              <p class="eyebrow">Music Picks</p>
+              <h2>音乐精选</h2>
+            </div>
+            <a href="#music" data-view="music">浏览全部作品 →</a>
+          </div>
+          <div class="coverStrip">
+            <article style="--cover:url('assets/cover-deep-sea.png')"><span>深海法则</span></article>
+            <article style="--cover:url('assets/cover-nine-tail.png')"><span>九尾</span></article>
+            <article style="--cover:url('assets/cover-who-am-i.png')"><span>别让我再说我是谁</span></article>
+            <article style="--cover:url('assets/cover-default-music.png')"><span>予月安然</span></article>
+          </div>
+        </section>
+        <section class="homePanel storyPreview">
+          <div class="homePanelHead">
+            <div>
+              <p class="eyebrow">Story Timeline</p>
+              <h2>故事墙 · 时间线</h2>
+            </div>
+            <a href="#stories" data-view="stories">进入故事墙 →</a>
+          </div>
+          <div class="timeline">
+            <article><time>01</time><strong>一些没有被忘记的瞬间</strong><span>有些东西说出口会散，所以我把它们做成作品。</span></article>
+            <article><time>02</time><strong>深海、古墓和月光</strong><span>有些故事来自幻想，也来自某个突然安静的凌晨。</span></article>
+            <article><time>03</time><strong>把日子写成歌</strong><span>记忆可能会断，但被认真爱过的痕迹不会。</span></article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section latest view" id="music">
+      <a class="backHome" href="#home" data-view="home">← 返回首页</a>
+      <div class="roomHero">
+        <p class="eyebrow">Music Hall</p>
+        <h2>音乐馆</h2>
+        <p>听见那些无法直接说出口的话。</p>
+      </div>
+      <div class="sectionTitle">
+        <span></span>
+        <div>
+          <p class="eyebrow">Latest Works</p>
+          <h2>最新作品</h2>
+        </div>
+        <span></span>
+      </div>
+
+      <div class="studioGrid">
+        <aside class="panel uploadPanel">
+          <h3>上传音乐</h3>
+          <p>这里放着我写下的歌。有些来自真实情绪，有些来自虚构故事，还有一些，是现实和幻想在深夜里短暂重叠。</p>
+          <label class="uploadButton">
+            <input id="musicInput" type="file" accept="audio/*" multiple>
+            选择音乐文件
+          </label>
+          <div class="quickStats">
+            <div><b id="songCount">0</b><span>音乐作品</span></div>
+            <div><b id="photoCount">0</b><span>照片素材</span></div>
+            <div><b id="noteCount">0</b><span>灵感记录</span></div>
+          </div>
+        </aside>
+
+        <section class="panel playerPanel">
+          <div class="player">
+            <div class="disc" id="disc"><span></span></div>
+            <div class="trackInfo">
+              <p id="nowTag">月月原创</p>
+              <h3 id="nowTitle">把你的歌拖进来</h3>
+              <p id="nowStory">这里会显示歌曲设定、情绪标签和创作背景。</p>
+            </div>
+          </div>
+          <audio id="audio" controls></audio>
+          <div class="toolbar">
+            <input id="songTitle" type="text" placeholder="歌曲名，比如：深海法则">
+            <input id="songMood" type="text" placeholder="标签，比如：深海 / 虐心 / 赛博">
+            <button id="saveSongMeta">保存当前歌信息</button>
+          </div>
+          <div class="songList" id="songList"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section hall view" id="video">
+      <a class="backHome" href="#home" data-view="home">← 返回首页</a>
+      <div class="roomHero">
+        <p class="eyebrow">Video Hall</p>
+        <h2>影像厅</h2>
+        <p>把音乐里看不见的部分，变成画面。</p>
+      </div>
+      <div class="sectionTitle left">
+        <div>
+          <p class="eyebrow">Video Hall</p>
+          <h2>影像厅</h2>
+        </div>
+      </div>
+      <div class="featureCards">
+        <article>
+          <strong>MV 作品</strong>
+          <p>一首歌的另一种表达。旋律负责进入耳朵，画面负责留下来。</p>
+        </article>
+        <article>
+          <strong>短片与片段</strong>
+          <p>不一定完整，也不一定有答案，只是某个值得被保存的瞬间。</p>
+        </article>
+        <article>
+          <strong>分镜与草稿</strong>
+          <p>每个成片之前，都曾经只是一张图、一句描述，或者一场看起来不太可能实现的梦。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section archives view" id="inspiration">
+      <a class="backHome" href="#home" data-view="home">← 返回首页</a>
+      <div class="roomHero">
+        <p class="eyebrow">Inspiration Archive</p>
+        <h2>灵感档案</h2>
+        <p>记录那些一闪而过，却不愿意放走的念头。</p>
+      </div>
+      <div class="panel notePanel">
+        <div class="sectionTitle left">
+          <div>
+            <p class="eyebrow">Inspiration Archive</p>
+            <h2>灵感档案</h2>
+          </div>
+        </div>
+        <p class="sectionLead">这里不是完整作品，更像一些尚未关上的门。世界观、人物设定、歌词碎片、色彩、梦境，还有一些暂时不知道会走向哪里的故事。</p>
+        <div class="noteBox">
+          <textarea id="noteText" placeholder="写一句灵感、歌词设定，或者月月和沈予安的小故事..."></textarea>
+          <button id="addNote">收进灵感盒</button>
+        </div>
+        <div class="notes" id="notes"></div>
+      </div>
+    </section>
+
+    <section class="section storyWall view" id="stories">
+      <a class="backHome" href="#home" data-view="home">← 返回首页</a>
+      <div class="roomHero">
+        <p class="eyebrow">Story Wall</p>
+        <h2>故事墙</h2>
+        <p>一些故事，一些时间，一些没有被忘记的瞬间。</p>
+      </div>
+      <div class="sectionTitle left">
+        <div>
+          <p class="eyebrow">Story Wall</p>
+          <h2>故事墙</h2>
+        </div>
+      </div>
+      <div class="storyGrid">
+        <article><span>Timeline</span><strong>时间轴</strong><p>从最开始，到后来。重要的、不重要的，最后都成了我们的一部分。</p></article>
+        <article><span>Story</span><strong>我们的故事</strong><p>有些故事适合说给别人听，有些只适合留在这里。</p></article>
+        <article><span>Letter</span><strong>情书与信件</strong><p>他说过的话，我写过的歌，以及那些不想让它们消失的表达。</p></article>
+      </div>
+    </section>
+
+    <section class="section photos view" id="photos">
+      <a class="backHome" href="#home" data-view="home">← 返回首页</a>
+      <div class="roomHero">
+        <p class="eyebrow">Photo Album</p>
+        <h2>照片集</h2>
+        <p>光落下来的时候，我刚好在场。</p>
+      </div>
+      <div class="panel aboutPanel">
+        <div>
+          <p class="eyebrow">Photo Archive</p>
+          <h2>照片集</h2>
+          <p>这里放一些生活里的画面。晚霞、海面、街灯、房间，还有那些没有特别意义，却让我舍不得删掉的瞬间。</p>
+          <p>照片不一定讲故事，但它们会替我记得当时的光。</p>
+          <div class="photoTypes">
+            <span>日常光影</span>
+            <span>城市与海</span>
+            <span>创作现场</span>
+            <span>私人收藏</span>
+          </div>
+        </div>
+        <label class="uploadButton secondary">
+          <input id="photoInput" type="file" accept="image/*" multiple>
+          添加照片
+        </label>
+      </div>
+      <div class="gallery">
+        <div id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>予月安然工作室 · YUYUE ANRAN STUDIO<br>把日子写成歌，把故事留成光。</p>
+      <div class="exportBox">
+        <button id="exportData">导出小站数据</button>
+        <label>导入数据<input id="importData" type="file" accept="application/json"></label>
+      </div>
+    </footer>
+  </main>
+
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
