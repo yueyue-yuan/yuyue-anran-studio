@@ -11,7 +11,7 @@
   --violet: #6d567f;
   --blue: #223c5d;
   --line: rgba(255, 214, 224, .22);
-  --font-main: "STXingkai", "华文行楷", "KaiTi", "STKaiti", serif;
+  --font-main: "STXingkai", "华文行楷", "KaiTi", "楷体", "STKaiti", serif;
   --font-body: "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", "PingFang SC", sans-serif;
 }
 
@@ -913,58 +913,410 @@ textarea {
 
 @media (max-width: 1120px) {
   .topbar {
-    position: absolute;
+    position: relative;
     height: auto;
     flex-direction: column;
     align-items: flex-start;
     padding: 16px;
   }
+
   nav {
     width: 100%;
     overflow-x: auto;
     gap: 18px;
     padding-bottom: 4px;
   }
+
   nav a { font-size: 18px; }
-  .hero { padding-top: 160px; }
+
+  .hero {
+    padding-top: 28px;
+  }
+
   .heroContent {
     width: 100%;
     margin: 18px 0 0;
   }
+
   .homeShowcase,
   .entryCards,
   .studioGrid,
   .featureCards,
   .storyGrid,
   .notes,
-    .photos,
+  .photos,
   #galleryGrid {
     grid-template-columns: 1fr;
   }
+
   .coverStrip,
   .timeline {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .photos.view.active {
     grid-template-columns: 1fr;
   }
+
   .entryCards {
     position: relative;
     left: auto;
     right: auto;
     bottom: auto;
   }
+
+  .section {
+    padding-top: 32px;
+  }
+
+  .backHome {
+    top: 18px;
+    right: 16px;
+  }
+
   .heroContent { padding-bottom: 28px; }
   .player, .toolbar, .noteBox { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .topbar {
+    gap: 14px;
+    padding: 16px 18px 14px;
+    background: rgba(8, 12, 24, .88);
+  }
+
+  .logo span {
+    font-size: 28px;
+  }
+
+  .logo small {
+    font-size: 15px;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(6, max-content);
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+    padding: 4px 0 8px;
+    scrollbar-width: none;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav a {
+    min-width: max-content;
+    font-size: 18px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 214, 224, .12);
+    border-radius: 999px;
+    background: rgba(255, 214, 224, .035);
+  }
+
+  nav a.active::after {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 26px 20px 44px;
+    gap: 20px;
+  }
+
+  .hero::before,
+  .hero::after,
+  .vertical {
+    display: none;
+  }
+
+  .heroImage img {
+    object-position: 58% center;
+  }
+
+  .heroScrim {
+    background:
+      linear-gradient(180deg, rgba(7, 10, 19, .34), rgba(7, 10, 19, .72)),
+      linear-gradient(90deg, rgba(7, 10, 19, .62), rgba(7, 10, 19, .22));
+  }
+
+  .heroContent {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .eyebrow {
+    font-size: 14px;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: clamp(34px, 11vw, 44px);
+    line-height: 1.28;
+  }
+
+  h1 span {
+    font-size: 1.08em;
+  }
+
+  h2 {
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .heroCopy {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .heroIntro {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .waveLine {
+    width: 100%;
+    height: 48px;
+    margin: 18px 0;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .heroActions button,
+  .heroActions a {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 16px;
+    font-size: 16px;
+  }
+
+  .entryCards {
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .entry {
+    min-height: 132px;
+    padding: 16px;
+  }
+
+  .entry strong {
+    font-size: 24px;
+  }
+
+  .entry span {
+    font-size: 13px;
+  }
+
+  .entry em {
+    display: none;
+  }
+
+  .homeShowcase {
+    grid-template-columns: 1fr;
+  }
+
+  .homePanel {
+    padding: 18px;
+  }
+
+  .homePanelHead {
+    align-items: start;
+    margin-bottom: 16px;
+  }
+
+  .homePanelHead h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .homePanelHead a {
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
   .coverStrip,
   .timeline {
     grid-template-columns: 1fr;
   }
-  .heroActions {
-    flex-direction: column;
-    align-items: stretch;
+
+  .coverStrip article {
+    min-height: 150px;
+  }
+
+  .timeline {
+    gap: 20px;
+  }
+
+  .timeline strong {
+    font-size: 22px;
+  }
+
+  .timeline span {
+    font-size: 14px;
+  }
+
+  .section {
+    min-height: auto;
+    padding: 26px 20px 56px;
+  }
+
+  .backHome {
+    position: static;
+    justify-self: start;
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+
+  .roomHero {
+    margin: 0 0 28px;
+    min-height: 220px;
+    padding: 24px;
+  }
+
+  .roomHero h2 {
+    font-size: clamp(42px, 15vw, 58px);
+    line-height: 1.05;
+  }
+
+  .roomHero p:last-child {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .sectionTitle {
+    margin-bottom: 24px;
+  }
+
+  .sectionTitle span {
+    width: 64px;
+  }
+
+  .sectionTitle.left {
+    margin-bottom: 18px;
+  }
+
+  .studioGrid {
+    gap: 16px;
+  }
+
+  .panel,
+  .uploadPanel,
+  .playerPanel,
+  .notePanel,
+  .aboutPanel {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .player {
+    min-height: 0;
+    gap: 18px;
+  }
+
+  .disc {
+    width: 128px;
+    justify-self: center;
+  }
+
+  .trackInfo h3 {
+    font-size: 30px;
+  }
+
+  .uploadPanel p,
+  .trackInfo p,
+  .featureCards p,
+  .storyGrid p,
+  .aboutPanel p,
+  .sectionLead {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .quickStats div {
+    padding: 12px;
+  }
+
+  .songList {
+    grid-template-columns: 1fr;
+  }
+
+  .song {
+    min-height: 150px;
+  }
+
+  .featureCards,
+  .storyGrid,
+  .notes {
+    gap: 14px;
+  }
+
+  .featureCards article,
+  .storyGrid article,
+  .note {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .featureCards strong,
+  .storyGrid strong {
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  .noteBox {
+    gap: 10px;
+  }
+
+  .noteBox button {
+    width: 100%;
+  }
+
+  .photoTypes span {
+    font-size: 13px;
+  }
+
+  #galleryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  #galleryGrid img {
+    aspect-ratio: 1.3;
+  }
+
+  .footer {
+    display: grid;
+    gap: 18px;
+    padding: 28px 20px 40px;
+  }
+
+  .footer p {
+    font-size: 18px;
+  }
+
+  .exportBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .exportBox button,
+  .exportBox label {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 13px;
+    text-align: center;
   }
 }
