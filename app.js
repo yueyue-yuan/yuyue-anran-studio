@@ -34,7 +34,7 @@ function mergeSeed(saved) {
   });
   merged.songs = merged.songs.map((song) => {
     const seeded = seed.songs.find((item) => item.title === song.title);
-    return seeded ? { ...seeded, ...song, cover: song.cover || seeded.cover } : song;
+    return seeded ? { ...song, ...seeded } : song;
   });
   const photoSrcs = new Set(merged.photos.map((photo) => photo.src));
   seed.photos.forEach((photo) => {
@@ -91,6 +91,8 @@ async function selectSong(index, shouldPlay) {
   $("nowTag").textContent = song.mood || "月月原创";
   $("nowTitle").textContent = song.title || "未命名歌曲";
   $("nowStory").textContent = song.story || "还没写故事，等月月补一句灵感。";
+  $("nowInspiration").textContent = song.inspiration || "这首歌的创作灵感还在月月脑子里闪着光。";
+  $("nowLyrics").textContent = song.lyric || "歌词稍后补上。";
   $("songTitle").value = song.title || "";
   $("songMood").value = song.mood || "";
   $("disc").style.setProperty("--cover", `url("${escapeAttr(song.cover || DEFAULT_COVER)}")`);

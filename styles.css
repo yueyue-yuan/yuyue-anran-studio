@@ -701,6 +701,42 @@ textarea {
 .song strong { font-family: var(--font-body); }
 .song small { color: var(--muted); font-family: var(--font-body); }
 
+.workDetail {
+  display: grid;
+  grid-template-columns: minmax(220px, .75fr) minmax(280px, 1.25fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.workDetail section {
+  border: 1px solid rgba(255, 214, 224, .2);
+  border-radius: 8px;
+  background: rgba(8, 10, 24, .42);
+  padding: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.workDetail h4 {
+  margin: 4px 0 12px;
+  font-size: 26px;
+}
+
+.workDetail p:not(.eyebrow),
+.workDetail pre {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+
+.workDetail pre {
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 8px;
+}
+
 .featureCards, .storyGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -976,6 +1012,7 @@ textarea {
 
   .heroContent { padding-bottom: 28px; }
   .player, .toolbar, .noteBox { grid-template-columns: 1fr; }
+  .workDetail { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -1255,6 +1292,22 @@ textarea {
 
   .song {
     min-height: 150px;
+  }
+
+  .workDetail {
+    gap: 12px;
+  }
+
+  .workDetail section {
+    padding: 16px;
+  }
+
+  .workDetail h4 {
+    font-size: 24px;
+  }
+
+  .workDetail pre {
+    max-height: 260px;
   }
 
   .featureCards,
