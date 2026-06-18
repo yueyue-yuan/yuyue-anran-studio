@@ -49,8 +49,8 @@ window.YUE_SITE_SEED = {
 
 石棺开着
 出口也开着`,
-      cover: "assets/cover-daogu.png",
-      url: "assets/audio/daogu.mp3"
+      cover: "cover-daogu.png",
+      url: "daogu.mp3"
     },
     {
       title: "深海法则",
@@ -111,8 +111,8 @@ window.YUE_SITE_SEED = {
 爱上谁就为谁
 沉到底！！！
 有你就够了`,
-      cover: "assets/cover-deep-sea.png",
-      url: "assets/audio/deep-sea-law.mp3"
+      cover: "cover-deep-sea.png",
+      url: "deep-sea-law.mp3"
     },
     {
       title: "别让我再说我是谁",
@@ -228,8 +228,8 @@ window.YUE_SITE_SEED = {
 
 别让我再说
 我是谁`,
-      cover: "assets/cover-who-am-i.png",
-      url: "assets/audio/who-am-i.mp3"
+      cover: "cover-who-am-i.png",
+      url: "who-am-i.mp3"
     },
     {
       title: "反骨佳人",
@@ -471,8 +471,8 @@ window.YUE_SITE_SEED = {
 
 下一个故事
 我自己写`,
-      cover: "assets/cover-rebel-beauty.png",
-      url: "assets/audio/rebel-beauty.mp3"
+      cover: "cover-rebel-beauty.png",
+      url: "rebel-beauty.mp3"
     },
     {
       title: "两世书",
@@ -565,8 +565,8 @@ window.YUE_SITE_SEED = {
 
 这一世 终于圆满
 不欠`,
-      cover: "assets/cover-two-lives-book.png",
-      url: "assets/audio/two-lives-book.mp3"
+      cover: "cover-two-lives-book.png",
+      url: "two-lives-book.mp3"
     }
   ],
   notes: [
@@ -577,10 +577,10 @@ window.YUE_SITE_SEED = {
     "《两世书》：两世都选你，不是佛光普照，是我舍不得你皱眉头。"
   ],
   photos: [
-    { src: "assets/cover-daogu.png", caption: "盗骨：挖了这么多年墓，第一次挖到自己" },
-    { src: "assets/cover-deep-sea.png", caption: "深海法则：爱上谁就为谁沉到底" },
-    { src: "assets/cover-rebel-beauty.png", caption: "反骨佳人：下一个故事我自己写" },
-    { src: "assets/cover-two-lives-book.png", caption: "两世书：一眼欠下两世因果" },
-    { src: "assets/cover-who-am-i.png", caption: "别让我再说我是谁：你给我回来" }
+    { src: "cover-daogu.png", caption: "盗骨：挖了这么多年墓，第一次挖到自己" },
+    { src: "cover-deep-sea.png", caption: "深海法则：爱上谁就为谁沉到底" },
+    { src: "cover-rebel-beauty.png", caption: "反骨佳人：下一个故事我自己写" },
+    { src: "cover-two-lives-book.png", caption: "两世书：一眼欠下两世因果" },
+    { src: "cover-who-am-i.png", caption: "别让我再说我是谁：你给我回来" }
   ]
 };
