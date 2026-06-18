@@ -832,6 +832,102 @@ textarea {
   background: #050713;
 }
 
+.workArchive {
+  margin-top: 26px;
+  padding: 26px;
+  border: 1px solid rgba(255, 214, 224, .18);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(214, 166, 92, .14), transparent 34%),
+    radial-gradient(circle at 12% 22%, rgba(198, 77, 117, .13), transparent 34%),
+    rgba(12, 14, 28, .55);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(12px);
+}
+
+.archiveHeader {
+  display: grid;
+  gap: 10px;
+  max-width: 880px;
+  margin-bottom: 22px;
+}
+
+.archiveHeader h3 {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: clamp(40px, 5vw, 72px);
+  color: var(--text);
+  text-shadow: 0 0 24px rgba(255, 214, 224, .18);
+}
+
+.archiveHeader p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.archiveGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.archiveGrid article {
+  min-height: 210px;
+  padding: 20px;
+  border: 1px solid rgba(255, 214, 224, .16);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .045);
+}
+
+.archiveGrid span {
+  display: block;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: .04em;
+}
+
+.archiveGrid h4 {
+  margin: 10px 0 12px;
+  font-family: var(--font-main);
+  font-size: 30px;
+  color: var(--text);
+}
+
+.archiveGrid p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.quotePanel {
+  margin-top: 18px;
+  padding: 24px;
+  border-left: 2px solid rgba(255, 205, 219, .65);
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255, 205, 219, .08), rgba(255, 255, 255, .025));
+}
+
+.quotePanel p {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: clamp(30px, 4vw, 54px);
+  color: #fff;
+}
+
+.quotePanel small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
 .storyGrid span {
   color: var(--gold);
   font-size: 12px;
@@ -1088,6 +1184,7 @@ textarea {
   .player, .toolbar, .noteBox { grid-template-columns: 1fr; }
   .workDetail { grid-template-columns: 1fr; }
   .videoShowcase { grid-template-columns: 1fr; }
+  .archiveGrid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -1405,6 +1502,23 @@ textarea {
 
   .videoShowcase video {
     min-height: 210px;
+  }
+
+  .workArchive {
+    padding: 18px;
+  }
+
+  .archiveHeader h3 {
+    font-size: 38px;
+  }
+
+  .archiveGrid article {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .archiveGrid h4 {
+    font-size: 28px;
   }
 
   .featureCards,
